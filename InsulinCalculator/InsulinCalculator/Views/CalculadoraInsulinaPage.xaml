@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="InsulinCalculator.Views.CalculadoraInsulinaPage"
+             Title="{Binding Title}"
+             BackgroundColor="BlueViolet"
+             
+             >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row="0" Margin="10,10">
+            <Label Text="Contagem de Carboidratos" TextColor="White"/>
+            <Entry Text="{Binding QuantidadeCarboidratos}" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" Margin="10,10">
+            <Label Text="Relação de Insulina da Refeição" TextColor="White"/>
+            <Entry Text="{Binding RelacaoInsulina}" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="2" Margin="10,10">
+            <Label Text="Glicemia" TextColor="White"/>
+            <Entry Text="{Binding Glicemia}" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="3" Margin="10,10">
+            <Button Text="Calcular Insulina" Command="{Binding CalcularInsulinaCommand}" BackgroundColor="Orange" TextColor="White" FontSize="Large" FontAttributes="Bold" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="4" Margin="10,10" >
+            <Label Text="Insulina para Refeição" />
+            <Label Text="{Binding InsulinaRefeicao}" TextColor="White"/>
+            <Label Text="Insulina para Correção" />
+            <Label Text="{Binding InsulinaCorrecao}" TextColor="White"/>
+            <Label Text="Insulina Total" />
+            <Label Text="{Binding InsulinaTotal}" TextColor="White"/>
+        </StackLayout>
+
+    </Grid>
+
+
+</ContentPage>
