@@ -26,10 +26,10 @@ namespace InsulinCalculator
         {
             InitializeComponent();
 
-            AppCenter.Start("ios=3f91be21-a97a-4639-b74f-a89702f2ff17;" +
+            /*AppCenter.Start("ios=3f91be21-a97a-4639-b74f-a89702f2ff17;" +
                   "uwp={Your UWP App secret here};" +
                   "android={Your Android App secret here}",
-                  typeof(Analytics), typeof(Crashes));
+                  typeof(Analytics), typeof(Crashes));*/
 
             await NavigationService.NavigateAsync("NavigationPage/CalculadoraInsulinaPage");
         }
