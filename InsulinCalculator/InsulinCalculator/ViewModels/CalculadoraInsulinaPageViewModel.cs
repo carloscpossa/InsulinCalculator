@@ -63,17 +63,26 @@ namespace InsulinCalculator.ViewModels
 
         public void CalcularInsulina()
         {
+            CalculaInsulinaCorrecao();
+            CalculaInsulinaRefeicao();
+
+            if (InsulinaCorrecao >= 0)
+                InsulinaTotal = InsulinaRefeicao + InsulinaCorrecao;
+
+        }
+
+        private void CalculaInsulinaCorrecao()
+        {
             InsulinaCorrecao = Math.Ceiling((Glicemia - 200) / 80);
             if (InsulinaCorrecao < 0)
                 InsulinaCorrecao = 0;
+        }
 
+        private void CalculaInsulinaRefeicao()
+        {
+            InsulinaRefeicao = 0;
             if (RelacaoInsulina > 0)
-            {
-                InsulinaRefeicao = (QuantidadeCarboidratos / RelacaoInsulina);
-                if (InsulinaCorrecao >= 0)
-                    InsulinaTotal = InsulinaRefeicao + InsulinaCorrecao;
-            }
-
+                InsulinaRefeicao = Math.Ceiling((QuantidadeCarboidratos / RelacaoInsulina));
         }
     }
 }
